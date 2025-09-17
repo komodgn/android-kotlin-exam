@@ -23,3 +23,4 @@ rootProject.name = "noti"
 include(":app")
 include(":home:data")
 include(":home:presentation")
+include(":code:presentation:designsystem")
