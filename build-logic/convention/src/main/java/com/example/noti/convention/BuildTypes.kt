@@ -9,7 +9,8 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.gradle.kotlin.dsl.configure
 
 internal fun Project.configureBuildTypes(
-    commonExtension: CommonExtension<*, *, *, *, *, *>
+    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    extensionType: ExtensionType
 ) {
     commonExtension.run {
         buildFeatures {
@@ -18,18 +19,36 @@ internal fun Project.configureBuildTypes(
     }
 
     val apiKey = gradleLocalProperties(rootDir, providers).getProperty("API_KEY")
-
-    extensions.configure<ApplicationExtension> {
-        buildTypes {
-            debug {
-                configureDebugBuildType(apiKey)
+    when (extensionType) {
+        ExtensionType.APPLICATION -> {
+            extensions.configure<ApplicationExtension> {
+                buildTypes {
+                    debug {
+                        configureDebugBuildType(apiKey)
+                    }
+                    create("staging") {
+                        configureStagingBuildType(apiKey)
+                    }
+                    release {
+                        configureReleaseBuildType(commonExtension, apiKey)
+                    }
+                }
             }
-            create("staging") {
-                configureStagingBuildType(apiKey)
-            }
-            release {
-                configureReleaseBuildType(commonExtension, apiKey)
-            }
+        }
+        ExtensionType.LIBRARY -> {
+            extensions.configure<LibraryExtension> {
+                buildTypes {
+                    debug {
+                        configureDebugBuildType(apiKey)
+                    }
+                    create("staging") {
+                        configureStagingBuildType(apiKey)
+                    }
+                    release {
+                        configureReleaseBuildType(commonExtension, apiKey)
+                    }
+                }
+            }            
         }
     }
 }
