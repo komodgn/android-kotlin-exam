@@ -48,3 +48,4 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrai
 
 # 커스텀 컨벤션 플러그인
 multi-module-android-application = { id = "multi.module.android.application", version = "unspecified" }
+multi-module-android-application-compose = { id = "multi.module.android.application.compose", version = "unspecified" }
