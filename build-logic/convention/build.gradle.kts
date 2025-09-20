@@ -2,7 +2,7 @@ plugins {
    `kotlin-dsl`
 }
 
-group = "com.multi.module.buildlogic"
+group = "com.example.noti.buildlogic"
 
 dependencies {
    compileOnly(libs.android.gradlePlugin)
@@ -32,6 +32,11 @@ gradlePlugin {
       register("androidLibraryCompose") {
          id = "multi.module.android.library.compose"
          implementationClass = "AndroidLibraryComposeConventionPlugin"
+      }
+
+      register("androidPresentationUI") {
+         id = "multi.module.android.presentation.ui"
+         implementationClass = "AndroidPresentationUIConventionPlugin"
       }
    }
 }

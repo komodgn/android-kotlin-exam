@@ -1,5 +1,6 @@
 plugins {
-    alias(libs.plugins.multi.module.android.library.compose)
+    alias(libs.plugins.multi.module.android.presentation.ui)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -8,12 +9,4 @@ android {
 
 dependencies {
     implementation(projects.home.domain)
-    implementation(projects.core.presentation.designsystem)
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }
