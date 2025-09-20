@@ -1,4 +1,4 @@
-package com.example.noti
+package com.example.noti.home.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -10,7 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.noti.ui.theme.NotiTheme
+import com.example.noti.home.domain.Product
+import com.example.noti.core.presentation.designsystem.theme.NotiTheme
 
 @Composable
 fun ProductListScreen() {
@@ -36,3 +37,16 @@ fun ProductListScreenPreview() {
         ProductListScreen()
     }
 }
+
+// 목 데이터
+val productList = listOf<Product>(
+    Product(1, R.drawable.shoes, "블랙 슈즈", 150000),
+    Product(2, R.drawable.cap, "블랙 캡", 55000),
+    Product(1, R.drawable.shoes, "블랙 슈즈", 150000),
+    Product(2, R.drawable.cap, "블랙 캡", 55000),
+    Product(5, R.drawable.top, "베이지 셔츠", 45000),
+    Product(1, R.drawable.shoes, "블랙 슈즈", 150000),
+    Product(5, R.drawable.top, "베이지 셔츠", 45000),
+    Product(2, R.drawable.cap, "블랙 캡", 55000),
+    Product(5, R.drawable.top, "베이지 셔츠", 45000),
+)

@@ -1,4 +1,4 @@
-package com.example.noti
+package com.example.noti.home.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -13,7 +13,9 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.noti.ui.theme.NotiTheme
+import com.example.noti.core.presentation.designsystem.theme.NotiTheme
+import com.example.noti.home.domain.Product
+
 
 @Composable
 fun ProductItem(product: Product) {

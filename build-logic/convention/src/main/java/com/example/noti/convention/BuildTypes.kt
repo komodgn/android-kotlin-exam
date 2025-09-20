@@ -18,7 +18,15 @@ internal fun Project.configureBuildTypes(
         }
     }
 
-    val apiKey = gradleLocalProperties(rootDir, providers).getProperty("API_KEY")
+    val localProperties = java.util.Properties()
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.inputStream().use { input ->
+            localProperties.load(input)
+        }
+    }
+    val apiKey = localProperties.getProperty("API_KEY")
+    // val apiKey = gradleLocalProperties(rootDir, providers).getProperty("API_KEY")
     when (extensionType) {
         ExtensionType.APPLICATION -> {
             extensions.configure<ApplicationExtension> {

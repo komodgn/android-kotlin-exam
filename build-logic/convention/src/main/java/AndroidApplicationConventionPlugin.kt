@@ -4,16 +4,19 @@ import com.example.noti.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import com.example.noti.convention.configureBuildTypes
+import com.example.noti.convention.ExtensionType
+
 
 class AndroidApplicationConventionPlugin: Plugin<Project> {
     override fun apply(target: Project) {
         target.run {
             pluginManager.run {
                 apply("com.android.application")
-                apply("org.jetbrations.kotlin.android")
+                apply("org.jetbrains.kotlin.android")
             }
 
-            extensions.configure<ApplicationExtention> {
+            extensions.configure<ApplicationExtension> {
                 defaultConfig {
                     applicationId = libs.findVersion("projectApplicationId").get().toString()
                     targetSdk = libs.findVersion("projectTargetSdkVersion").get().toString().toInt()

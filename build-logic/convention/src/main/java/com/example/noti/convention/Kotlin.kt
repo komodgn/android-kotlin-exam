@@ -6,16 +6,17 @@ import org.gradle.api.JavaVersion
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 internal fun Project.configureKotlinAndroid(
     commonExtension: CommonExtension<*, *, *, *, *, *>
 ) {
     commonExtension.apply {
-        complieSdk = 36
+        compileSdk = libs.findVersion("projectCompileSdkVersion").get().toString().toInt()
 
-        defaultConfig.minSdk = 24
+        defaultConfig.minSdk = libs.findVersion("projectMinSdkVersion").get().toString().toInt()
 
-        complieOptions {
+        compileOptions {
             isCoreLibraryDesugaringEnabled = true
             sourceCompatibility = JavaVersion.VERSION_11
             targetCompatibility = JavaVersion.VERSION_11
@@ -25,14 +26,17 @@ internal fun Project.configureKotlinAndroid(
     configureKotlin()
 
     dependencies {
-        "coreLibraryDesugaring"(libs.findLibrary("de"))
+        "coreLibraryDesugaring"(libs.findLibrary("desugar-jdk-libs").get())
     }
 }
 
 private fun Project.configureKotlin() {
     tasks.withType<KotlinCompile>().configureEach {
-        kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_11.toString()
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_11)
         }
+        // kotlinOptions {
+        //     jvmTarget = JavaVersion.VERSION_11.toString()
+        // }
     }
 }

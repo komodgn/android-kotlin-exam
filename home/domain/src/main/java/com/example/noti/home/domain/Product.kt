@@ -1,4 +1,4 @@
-package com.example.noti
+package com.example.noti.home.domain
 
 data class Product(
     val id: Int,
