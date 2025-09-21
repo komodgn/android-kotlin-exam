@@ -1,5 +1,5 @@
 [versions]
-projectApplicationId = "com.example.noti.template"
+projectApplicationId = "com.example.noti"
 projectVersionName = "1.0"
 projectVersionCode = "1"
 projectMinSdkVersion = "24"
