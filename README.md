@@ -5,6 +5,7 @@
 ### 실습을 위한 멀티 모듈 구성
 ```
 app
+core: database (Java or Kotlin Library)
 core: presentation: designsystem (Android Library)
 home: presentation (Android Library)
 home: domain (Java or Kotlin Library) - 비즈니스 로직
