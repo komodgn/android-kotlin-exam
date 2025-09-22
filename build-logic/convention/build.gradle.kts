@@ -58,5 +58,10 @@ gradlePlugin {
          id = "multi.module.android.retrofit"
          implementationClass = "AndroidRetrofitConventionPlugin"
       }
+
+      register("kotlinLibrarySerialization") {
+         id = "multi.module.kotlin.library.serialization"
+         implementationClass = "KotlinLibrarySerializationConventionPlugin"
+      }
    }
 }
