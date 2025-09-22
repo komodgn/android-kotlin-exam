@@ -24,6 +24,14 @@ jetbrainsKotlinJvm = "2.2.20"
 desugar_jdk_libs = "2.1.5"
 composeCompiler = "1.5.9"
 
+## Hilt
+hilt = "2.57"
+hilt-navigation-compose = "1.2.0"
+
+## Network
+okhttp = "5.1.0"
+retrofit = "3.0.0"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -50,6 +58,11 @@ desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref 
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
+
 
 # Gradle
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
@@ -79,8 +92,11 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+
 room = { id = "androidx.room", version.ref = "room" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 # 커스텀 컨벤션 플러그인
 multi-module-android-application = { id = "multi.module.android.application", version = "unspecified" }
@@ -89,4 +105,5 @@ multi-module-android-library = { id = "multi.module.android.library", version = 
 multi-module-android-library-compose = { id = "multi.module.android.library.compose", version = "unspecified" }
 multi-module-android-presentation-ui = { id = "multi.module.android.presentation.ui", version = "unspecified" }
 multi-module-android-room = { id = "multi.module.android.room", version = "unspecified" }
+multi-module-jvm-library = { id = "multi.module.jvm.library", version = "unspecified" }
 multi-module-jvm-library = { id = "multi.module.jvm.library", version = "unspecified" }
