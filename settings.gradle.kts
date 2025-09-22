@@ -1,4 +1,7 @@
 pluginManagement {
+
+    includeBuild("build-logic")
+
     repositories {
         google {
             content {
@@ -19,6 +22,12 @@ dependencyResolutionManagement {
     }
 }
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 rootProject.name = "noti"
 include(":app")
- 
+include(":core:database")
+include(":core:presentation:designsystem")
+include(":home:data")
+include(":home:presentation")
+include(":home:domain")

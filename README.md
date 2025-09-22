@@ -1,10 +1,3 @@
-## 안드로이드 학습을 위한 레포
-
-- 간단한 실습 진행 ([멀티 모듈](https://github.com/komodgn/android-kotlin-exam/tree/test))
-
-### 참고 자료 
-- [일반적인 모듈화 패턴](https://developer.android.com/topic/modularization/patterns?hl=ko&_gl=1*wa7wmw*_up*MQ..*_ga*MjExNjEyMjgzMS4xNzU4MDExMjc4*_ga_6HH9YJMN9M*czE3NTgwMTEyNzgkbzEkZzAkdDE3NTgwMTEyNzgkajYwJGwwJGgxODgwNjQwMjY2)
-
 ### 안드로이드 멀티 모듈 레이어별 역할 정리
 1. `Presentation(UI 레이어)`
 - 역할: 사용자에게 보이는 화면과 상호작용을 담당
