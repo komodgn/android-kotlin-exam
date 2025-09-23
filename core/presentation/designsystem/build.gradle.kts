@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.multi.module.android.library.compose)
 //    alias(libs.plugins.multi.module.android.presentation.ui)
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
