@@ -64,5 +64,10 @@ gradlePlugin {
          id = "multi.module.kotlin.library.serialization"
          implementationClass = "KotlinLibrarySerializationConventionPlugin"
       }
+
+      register("androidFeature") {
+         id = "multi.module.android.feature"
+         implementationClass = "AndroidFeatureConventionPlugin"
+      }
    }
 }

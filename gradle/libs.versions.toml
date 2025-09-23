@@ -126,3 +126,4 @@ multi-module-jvm-library = { id = "multi.module.jvm.library", version = "unspeci
 multi-module-android-hilt = { id = "multi.module.android.hilt", version = "unspecified" }
 multi-module-android-retrofit = { id = "multi.module.android.retrofit", version = "unspecified" }
 multi-module-kotlin-library-serialization = { id = "multi.module.kotlin.library.serialization", version = "unspecified" }
+multi-module-android-feature = { id = "multi.module.android.feature", version = "unspecified" }
