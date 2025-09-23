@@ -7,12 +7,12 @@ class AndroidFeatureConventionPlugin: Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyPlugins(
-                "multi.module.android.library.compose",
+                "multi.module.android.presentation.ui",
                 "multi.module.android.hilt"
             )
 
             dependencies {
-                // TODO: presentation 폴더 제거 리팩토링
+                // TODO: presentation 폴더 제거
                 "implementation"(project(":core:presentation:designsystem"))
                 // TODO: core:* 모듈 생성 및 추가 - navigation, ui, common, domain, ..
             }
