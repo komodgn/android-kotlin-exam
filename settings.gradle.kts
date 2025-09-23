@@ -28,7 +28,4 @@ rootProject.name = "noti"
 include(":app")
 include(":core:database")
 include(":core:presentation:designsystem")
-include(":home:data")
-include(":home:presentation")
-include(":home:domain")
 include(":feature:main")
