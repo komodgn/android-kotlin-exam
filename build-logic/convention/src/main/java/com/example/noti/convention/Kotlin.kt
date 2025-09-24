@@ -45,8 +45,5 @@ private fun Project.configureKotlin() {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
-        // kotlinOptions {
-        //     jvmTarget = JavaVersion.VERSION_11.toString()
-        // }
     }
 }
