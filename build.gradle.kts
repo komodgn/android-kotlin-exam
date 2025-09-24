@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.room) apply false
 
     alias(libs.plugins.hilt) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
 
     // Module Graph
     id("com.vanniktech.dependency.graph.generator") version "0.7.0"

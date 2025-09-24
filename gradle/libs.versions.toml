@@ -26,6 +26,9 @@ hilt-navigation-compose = "1.3.0"
 okhttp = "5.1.0"
 retrofit = "3.0.0"
 
+## Logging
+logger = "2.2.0"
+
 ## Compose
 compose-bom = "2025.09.00"
 compose-stable-marker = "1.0.7"
@@ -80,6 +83,8 @@ androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navig
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-kotlinx-serialization-converter = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "retrofit" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
