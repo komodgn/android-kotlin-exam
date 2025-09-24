@@ -13,8 +13,8 @@ class AndroidRetrofitConventionPlugin: Plugin<Project> {
 
             dependencies {
                 "implementation"(libs.findLibrary("retrofit").get())
-                "implementation"(libs.findLibrary("retrofit.kotlinx.serialization.converter"))
-                "implementation"(libs.findLibrary("okhttp.logging.interceptor"))
+                "implementation"(libs.findLibrary("retrofit.kotlinx.serialization.converter").get())
+                "implementation"(libs.findLibrary("okhttp.logging.interceptor").get())
             }
         }
     }
