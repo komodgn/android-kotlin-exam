@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="start">시작하기</string>
+    <string name="login_page_description_first">함께해주어 고맙소!</string>
+    <string name="login_page_description_second">그대의 이름을 알려주시오.</string>
+    <string name="login_page_text_hint_nickname">닉네임을 입력해주세요</string>
+    <string name="login_page_text_warning_nickname">한글, 영문, 숫자를 조합하여 사용 가능합니다.</string>
+</resources>
