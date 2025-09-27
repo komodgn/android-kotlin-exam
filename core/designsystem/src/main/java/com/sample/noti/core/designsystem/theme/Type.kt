@@ -1,4 +1,4 @@
-package com.example.noti.core.presentation.designsystem.theme
+package com.sample.noti.core.designsystem.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

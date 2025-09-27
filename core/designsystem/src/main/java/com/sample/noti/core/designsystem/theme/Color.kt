@@ -1,4 +1,4 @@
-package com.example.noti.core.presentation.designsystem.theme
+package com.sample.noti.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 
