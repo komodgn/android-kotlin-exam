@@ -1,33 +1,35 @@
 plugins {
     alias(libs.plugins.multi.module.android.application.compose)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.multi.module.android.hilt)
 }
 
 android {
-    namespace = "com.example.noti.template"
+    namespace = "com.sample.noti.template"
+}
 
-    defaultConfig {
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
+ksp {
+    arg("circuit.codegen.mode", "hilt")
 }
 
 dependencies {
-    // hilt 도입 후 제거 예정
-    implementation(projects.home.presentation)
-    implementation(projects.core.presentation.designsystem)
+    implementation(projects.core.common)
+    implementation(projects.core.model)
+    implementation(projects.core.ui)
+    implementation(projects.core.network)
+    implementation(projects.core.data.api)
+    implementation(projects.core.data.impl)
+    implementation(projects.core.datastore.api)
+    implementation(projects.core.datastore.impl)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(projects.feature.main)
+    implementation(projects.feature.screens)
+    implementation(projects.feature.onboarding)
+    implementation(projects.feature.login)
+    implementation(projects.feature.home)
+
+//    implementation(libs.androidx.startup)
+//    implementation(libs.coil.compose)
+//    implementation(libs.kakao.auth)
     implementation(libs.androidx.activity.compose)
-
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.logger)
 }

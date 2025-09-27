@@ -1,20 +1,20 @@
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
-import com.example.noti.convention.applyPlugins
-import com.example.noti.convention.libs
+import com.sample.noti.convention.applyPlugins
+import com.sample.noti.convention.libs
 
 class AndroidHiltConventionPlugin: Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyPlugins(
                 "com.google.dagger.hilt.android",
-                "kotlin-kapt"
+                "com.google.devtools.ksp",
             )
 
             dependencies {
                 "implementation"(libs.findLibrary("hilt.android").get())
-                "kapt"(libs.findLibrary("hilt-android-compiler").get())
+                "ksp"(libs.findLibrary("hilt.android.compiler").get())
             }
         }
     }

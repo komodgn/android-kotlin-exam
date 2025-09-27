@@ -2,7 +2,7 @@ plugins {
    `kotlin-dsl`
 }
 
-group = "com.example.noti.buildlogic"
+group = "com.sample.noti.buildlogic"
 
 dependencies {
    compileOnly(libs.android.gradlePlugin)
@@ -10,6 +10,7 @@ dependencies {
    compileOnly(libs.kotlin.gradlePlugin)
    compileOnly(libs.ksp.gradlePlugin)
    compileOnly(libs.room.gradlePlugin)
+   compileOnly(libs.hilt.gradlePlugin)
 }
 
 gradlePlugin {
@@ -59,9 +60,19 @@ gradlePlugin {
          implementationClass = "AndroidRetrofitConventionPlugin"
       }
 
+      register("androidFirebase") {
+         id = "multi.module.android.firebase"
+         implementationClass = "AndroidFirebaseConventionPlugin"
+      }
+
       register("kotlinLibrarySerialization") {
          id = "multi.module.kotlin.library.serialization"
          implementationClass = "KotlinLibrarySerializationConventionPlugin"
+      }
+
+      register("androidFeature") {
+         id = "multi.module.android.feature"
+         implementationClass = "AndroidFeatureConventionPlugin"
       }
    }
 }

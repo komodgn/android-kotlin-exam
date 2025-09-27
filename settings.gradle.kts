@@ -25,9 +25,21 @@ dependencyResolutionManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "noti"
+
 include(":app")
-include(":core:database")
-include(":core:presentation:designsystem")
-include(":home:data")
-include(":home:presentation")
-include(":home:domain")
+
+include(":feature:main")
+include(":feature:onboarding")
+include(":feature:login")
+include(":feature:home")
+include(":feature:screens")
+
+include(":core:model")
+include(":core:network")
+include(":core:ui")
+include(":core:common")
+include(":core:designsystem")
+include(":core:data:api")
+include(":core:data:impl")
+include(":core:datastore:api")
+include(":core:datastore:impl")

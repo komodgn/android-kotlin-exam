@@ -1,5 +1,5 @@
-import com.example.noti.convention.applyPlugins
-import com.example.noti.convention.libs
+import com.sample.noti.convention.applyPlugins
+import com.sample.noti.convention.libs
 import org.gradle.api.Project
 import org.gradle.api.Plugin
 import org.gradle.kotlin.dsl.dependencies
@@ -13,8 +13,8 @@ class AndroidRetrofitConventionPlugin: Plugin<Project> {
 
             dependencies {
                 "implementation"(libs.findLibrary("retrofit").get())
-                "implementation"(libs.findLibrary("retrofit.kotlinx.serialization.converter"))
-                "implementation"(libs.findLibrary("okhttp.logging.interceptor"))
+                "implementation"(libs.findLibrary("retrofit.kotlinx.serialization.converter").get())
+                "implementation"(libs.findLibrary("okhttp.logging.interceptor").get())
             }
         }
     }

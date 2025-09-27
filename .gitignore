@@ -1,3 +1,6 @@
+# Google Services (Firebase)
+google-services.json
+
 gradle-wrapper.jar
 .idea
 *.iml
@@ -16,3 +19,9 @@ gradle-wrapper.jar
 .cxx
 local.properties
 /.kotlin
+
+# Log Files
+*.log
+
+# Java class files
+*.class

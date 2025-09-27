@@ -1,11 +1,11 @@
 import com.android.build.api.dsl.ApplicationExtension
-import com.example.noti.convention.configureKotlinAndroid
-import com.example.noti.convention.libs
+import com.sample.noti.convention.configureKotlinAndroid
+import com.sample.noti.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import com.example.noti.convention.configureBuildTypes
-import com.example.noti.convention.ExtensionType
+import com.sample.noti.convention.configureBuildTypes
+import com.sample.noti.convention.ExtensionType
 
 
 class AndroidApplicationConventionPlugin: Plugin<Project> {
