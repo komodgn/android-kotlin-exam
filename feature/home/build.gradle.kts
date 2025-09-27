@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.noti.feature.home"
+    namespace = "com.sample.noti.feature.home"
 }
 
 //ksp {

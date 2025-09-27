@@ -1,4 +1,4 @@
-package com.example.noti.convention
+package com.sample.noti.convention
 
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog

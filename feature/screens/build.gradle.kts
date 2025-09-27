@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.noti.feature.screens"
+    namespace = "com.sample.noti.feature.screens"
 }
 
 dependencies {

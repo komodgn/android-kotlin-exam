@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.noti.feature.login"
+    namespace = "com.sample.noti.feature.login"
 }
 
 dependencies {

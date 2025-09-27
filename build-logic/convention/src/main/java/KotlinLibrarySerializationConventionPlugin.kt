@@ -1,5 +1,5 @@
-import com.example.noti.convention.applyPlugins
-import com.example.noti.convention.libs
+import com.sample.noti.convention.applyPlugins
+import com.sample.noti.convention.libs
 import org.gradle.api.Project
 import org.gradle.api.Plugin
 import org.gradle.kotlin.dsl.dependencies

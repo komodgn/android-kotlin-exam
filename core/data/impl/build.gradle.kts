@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.noti.core.data.impl"
+    namespace = "com.sample.noti.core.data.impl"
 }
 
 dependencies {

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.noti.core.datastore.impl"
+    namespace = "com.sample.noti.core.datastore.impl"
 }
 
 dependencies {

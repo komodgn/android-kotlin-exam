@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.noti.core.designsystem"
+    namespace = "com.sample.noti.core.designsystem"
 }
 
 dependencies {

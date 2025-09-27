@@ -1,4 +1,4 @@
-package com.example.noti.core.model
+package com.sample.noti.core.model
 
 import androidx.compose.runtime.Immutable
 

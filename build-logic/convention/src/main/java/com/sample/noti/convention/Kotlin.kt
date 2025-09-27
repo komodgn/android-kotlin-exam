@@ -1,4 +1,4 @@
-package com.example.noti.convention
+package com.sample.noti.convention
 
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.Project

@@ -1,10 +1,10 @@
-package com.example.noti.feature.main
+package com.sample.noti.feature.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.noti.core.presentation.designsystem.theme.NotiTheme
+import com.sample.noti.core.designsystem.theme.NotiTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

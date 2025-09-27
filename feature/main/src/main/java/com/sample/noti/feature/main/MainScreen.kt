@@ -1,4 +1,4 @@
-package com.example.noti.feature.main
+package com.sample.noti.feature.main
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding

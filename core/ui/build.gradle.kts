@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.noti.core.ui"
+    namespace = "com.sample.noti.core.ui"
 }
 
 dependencies {

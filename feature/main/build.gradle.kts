@@ -3,11 +3,18 @@ plugins {
 }
 
 android {
-    namespace = "com.example.noti.feature.main"
+    namespace = "com.sample.noti.feature.main"
 }
 
-dependencies {
-    // TODO: feature/* 모듈 추가
+//ksp {
+//    arg("circuit.codegen.mode", "hilt")
+//}
 
+dependencies {
     implementation(libs.androidx.activity.compose)
+
+//    implementation(libs.androidx.splash)
+    implementation(libs.compose.system.ui.controller)
+
+    implementation(libs.logger)
 }

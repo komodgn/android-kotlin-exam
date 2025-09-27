@@ -1,12 +1,12 @@
-package com.example.noti.convention
+package com.sample.noti.convention
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.Project
 import com.android.build.api.dsl.BuildType
 import com.android.build.api.dsl.LibraryExtension
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.gradle.kotlin.dsl.configure
+import java.util.Properties
 
 internal fun Project.configureBuildTypes(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
@@ -18,7 +18,7 @@ internal fun Project.configureBuildTypes(
         }
     }
 
-    val localProperties = java.util.Properties()
+    val localProperties = Properties()
     val localPropertiesFile = rootProject.file("local.properties")
     if (localPropertiesFile.exists()) {
         localPropertiesFile.inputStream().use { input ->
