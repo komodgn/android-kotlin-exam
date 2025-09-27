@@ -4,21 +4,32 @@ plugins {
 }
 
 android {
-    namespace = "com.example.noti.template"
+    namespace = "com.sample.noti.template"
+}
 
-    defaultConfig {
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
+ksp {
+    arg("circuit.codegen.mode", "hilt")
 }
 
 dependencies {
-    implementation(projects.core.presentation.designsystem)
-    // TODO: core:* 모듈 추가 - common, domain, data, network ..
+    implementation(projects.core.common)
+    implementation(projects.core.model)
+    implementation(projects.core.ui)
+    implementation(projects.core.network)
+    implementation(projects.core.data.api)
+    implementation(projects.core.data.impl)
+    implementation(projects.core.datastore.api)
+    implementation(projects.core.datastore.impl)
 
     implementation(projects.feature.main)
-    // TODO: feature:* 모듈 추가
+    implementation(projects.feature.screens)
+    implementation(projects.feature.onboarding)
+    implementation(projects.feature.login)
+    implementation(projects.feature.home)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+//    implementation(libs.androidx.startup)
+//    implementation(libs.coil.compose)
+//    implementation(libs.kakao.auth)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.logger)
 }
