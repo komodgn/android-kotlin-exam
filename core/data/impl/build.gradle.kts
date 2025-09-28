@@ -6,6 +6,14 @@ plugins {
 
 android {
     namespace = "com.sample.noti.core.data.impl"
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    defaultConfig {
+        buildConfigField("String", "APP_VERSION", "\"${libs.versions.projectVersionName.get()}\"")
+    }
 }
 
 dependencies {
