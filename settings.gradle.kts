@@ -45,3 +45,4 @@ include(":core:data:impl")
 include(":core:datastore:api")
 include(":core:datastore:impl")
 
+include(":core:testing")

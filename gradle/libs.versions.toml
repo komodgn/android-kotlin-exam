@@ -71,6 +71,9 @@ composeCompiler = "1.5.9"
 # Test
 junit = "4.13.2"
 junitVersion = "1.3.0"
+mockk = "1.13.10"
+truth = "1.1.5"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -135,7 +138,8 @@ kakao-auth = { group = "com.kakao.sdk", name = "v2-user", version.ref = "kakao-c
 logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
+mockk-jvm = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 
 # Gradle
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }

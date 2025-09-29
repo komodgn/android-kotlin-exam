@@ -3,6 +3,7 @@ package com.sample.noti.core.data.impl.repository
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.get
 import com.orhanobut.logger.Logger
+import com.sample.noti.core.common.utils.isUpdateRequired
 import com.sample.noti.core.data.api.repository.RemoteConfigRepository
 import com.sample.noti.core.data.impl.BuildConfig
 import kotlinx.coroutines.suspendCancellableCoroutine
