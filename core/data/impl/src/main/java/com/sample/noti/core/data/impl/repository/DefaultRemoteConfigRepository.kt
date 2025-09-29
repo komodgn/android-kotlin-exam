@@ -38,14 +38,11 @@ class DefaultRemoteConfigRepository @Inject constructor(
                 val minVersion = remoteConfig[KEY_MIN_VERSION].asString()
                 val currentVersion = BuildConfig.APP_VERSION
                 Logger.d("currentVersion: $currentVersion, minVersion: $minVersion")
-                // TODO: 버전 비교 유틸 메서드ㅡ 구현
                 continuation.resume(Result.success(isUpdateRequired(currentVersion, minVersion)))
             } else {
                 Logger.e(task.exception, "RemoteConfig shouldUpdate failed")
                 continuation.resume(Result.failure(task.exception ?: Exception("Unknown error")))
-
             }
         }
-
     }
 }

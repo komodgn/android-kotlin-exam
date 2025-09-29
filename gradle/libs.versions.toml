@@ -1,7 +1,7 @@
 [versions]
 # Application
 projectApplicationId = "com.sample.noti"
-projectVersionName = "1.0.0"
+versionName = "1.0.0"
 projectVersionCode = "1"
 projectMinSdkVersion = "24"
 projectTargetSdkVersion = "36"
@@ -119,7 +119,7 @@ firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.r
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 firebase-config = { group = "com.google.firebase", name = "firebase-config" }
-firebase-remote-config = { group = "com.google.firebase", name = "firebase-config" }
+#firebase-remote-config = { group = "com.google.firebase", name = "firebase-config" }
 
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
