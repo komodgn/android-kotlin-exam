@@ -9,7 +9,8 @@ class AndroidFeatureConventionPlugin: Plugin<Project> {
         with(target) {
             applyPlugins(
                 "multi.module.android.presentation.ui",
-                "multi.module.android.hilt"
+                "multi.module.android.hilt",
+                "com.google.devtools.ksp"
             )
 
             dependencies {
@@ -20,11 +21,12 @@ class AndroidFeatureConventionPlugin: Plugin<Project> {
                 "implementation"(project(":core:ui"))
                 "implementation"(project(":feature:screens"))
 
-//                implementation(libs.compose.effects)
-//
-//                api(libs.circuit.codegen.annotation)
-                "ksp"(libs.findLibrary("circuit.codegen.ksp").get())
+                "implementation"(libs.findLibrary("compose.effects").get())
+
                 "implementation"(libs.findBundle("circuit").get())
+
+                "api"(libs.findLibrary("circuit.codegen.annotation").get())
+                "ksp"(libs.findLibrary("circuit.codegen.ksp").get())
             }
         }
     }

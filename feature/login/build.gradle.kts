@@ -8,6 +8,10 @@ android {
     namespace = "com.sample.noti.feature.login"
 }
 
+ksp {
+    arg("circuit.codegen.mode", "hilt")
+}
+
 dependencies {
 //    implementation(libs.kakao.auth)
 
