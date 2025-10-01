@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_app_title">춘구마</string>
+    <string name="splash_app_description">춘식이는 고구마</string>
+    <string name="splash_update_title">최신 버전이 출시되었어요.</string>
+    <string name="splash_update_message">업데이트가 필요해요.</string>
+    <string name="splash_update_button_text">업데이트 하기</string>
+</resources>
