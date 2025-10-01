@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.sample.noti.core.designsystem.theme.NotiTheme
 import com.sample.noti.feature.screens.SplashScreen
 import com.slack.circuit.backstack.rememberSaveableBackStack
@@ -23,8 +24,9 @@ class MainActivity : ComponentActivity() {
     lateinit var circuit: Circuit
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        installSplashScreen()
         enableEdgeToEdge()
+        super.onCreate(savedInstanceState)
 
         setContent {
             NotiTheme {
