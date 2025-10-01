@@ -1,6 +1,6 @@
 [versions]
 # Application
-projectApplicationId = "com.sample.noti"
+applicationId = "com.sample.noti"
 versionName = "1.0.0"
 projectVersionCode = "1"
 projectMinSdkVersion = "24"
