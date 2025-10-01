@@ -12,8 +12,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.activity.compose)
-
-//    implementation(libs.androidx.splash)
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.compose.system.ui.controller)
 
     implementation(libs.logger)

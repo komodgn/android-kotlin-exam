@@ -6,6 +6,14 @@ plugins {
 
 android {
     namespace = "com.sample.noti.core.data.impl"
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    defaultConfig {
+        buildConfigField("String", "APP_VERSION", "\"${libs.versions.versionName.get()}\"")
+    }
 }
 
 dependencies {
@@ -15,8 +23,8 @@ dependencies {
     implementation(projects.core.data.api)
     implementation(projects.core.datastore.api)
 
-    platform(libs.firebase.bom)
-    implementation(libs.firebase.remote.config)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.config)
 
     implementation(libs.logger)
 }

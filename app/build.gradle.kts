@@ -23,6 +23,7 @@ dependencies {
 
     implementation(projects.feature.main)
     implementation(projects.feature.screens)
+    implementation(projects.feature.splash)
     implementation(projects.feature.onboarding)
     implementation(projects.feature.login)
     implementation(projects.feature.home)
@@ -32,4 +33,6 @@ dependencies {
 //    implementation(libs.kakao.auth)
     implementation(libs.androidx.activity.compose)
     implementation(libs.logger)
+
+    implementation(libs.bundles.circuit)
 }

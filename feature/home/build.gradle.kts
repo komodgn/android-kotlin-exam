@@ -8,9 +8,9 @@ android {
     namespace = "com.sample.noti.feature.home"
 }
 
-//ksp {
-//    arg("circuit.codegen.mode", "hilt")
-//}
+ksp {
+    arg("circuit.codegen.mode", "hilt")
+}
 
 dependencies {
 //    implementation(libs.lottie.compose)

@@ -8,9 +8,9 @@ android {
     namespace = "com.sample.noti.feature.onboarding"
 }
 
-//ksp {
-//    arg("circuit.codegen.mode", "hilt")
-//}
+ksp {
+    arg("circuit.codegen.mode", "hilt")
+}
 
 dependencies {
     implementation(libs.logger)
