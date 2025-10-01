@@ -42,10 +42,19 @@
    - 변경 격리 (Change Isolation): 데이터 저장 방식이나 기술 스택을 변경해야 할 때, 
      변경의 영향 범위가 오직 `impl` 모듈 내부로만 제한된다.
 
-### 🍋 기술 스택
-```
+### 🍑 data 관련 모듈에서 repository와 datasource의 의미
+data 관련 모듈에서 하위 폴더로 repository와 datasource로 나뉘는 것은 다음과 같이 정의한다.
+- repository는 비즈니스적인 
+- datasource는 해당 데이터를 어떻게 저장하고 읽을지에 대한 기술적인
 
-```
+### 🍋 기술 스택
+- Circuit
+- Compose
+- Hilt
+- build-logic
+- Gradle
+- Version Catalog
+- Firebase Remote Config
 
 멀티 모듈 구조에 컨벤션 플러그인을 적용하는 방법은 해당 블로그를 참고한다.
 - [안드로이드 멀티 모듈](https://dev-inventory.com/55)
