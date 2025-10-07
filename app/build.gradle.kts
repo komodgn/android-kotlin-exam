@@ -27,6 +27,7 @@ dependencies {
     implementation(projects.feature.onboarding)
     implementation(projects.feature.login)
     implementation(projects.feature.home)
+    implementation(projects.feature.webview)
 
 //    implementation(libs.androidx.startup)
 //    implementation(libs.coil.compose)

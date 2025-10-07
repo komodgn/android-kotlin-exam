@@ -20,3 +20,9 @@ data object HomeScreen : NotiScreen(name = ScreenNames.HOME)
 
 @Parcelize
 data object LoginScreen : NotiScreen(name = ScreenNames.LOGIN)
+
+@Parcelize
+data class WebViewScreen(
+    val url: String,
+    val title: String
+) : NotiScreen(name = ScreenNames.WEBVIEW)

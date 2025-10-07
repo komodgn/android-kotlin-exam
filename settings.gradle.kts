@@ -34,6 +34,7 @@ include(":feature:login")
 include(":feature:home")
 include(":feature:screens")
 include(":feature:splash")
+include(":feature:webview")
 
 include(":core:model")
 include(":core:network")
@@ -44,5 +45,5 @@ include(":core:data:api")
 include(":core:data:impl")
 include(":core:datastore:api")
 include(":core:datastore:impl")
-
 include(":core:testing")
+
