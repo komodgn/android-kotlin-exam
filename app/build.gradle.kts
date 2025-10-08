@@ -15,6 +15,7 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.model)
     implementation(projects.core.ui)
+    implementation(projects.core.ocr)
     implementation(projects.core.network)
     implementation(projects.core.data.api)
     implementation(projects.core.data.impl)
