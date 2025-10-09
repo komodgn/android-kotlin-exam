@@ -11,6 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.sample.noti.core.designsystem.DevicePreview
+import com.sample.noti.core.designsystem.component.button.NotiButtonColorStyle
+import com.sample.noti.core.designsystem.component.button.NotiTextButton
+import com.sample.noti.core.designsystem.component.button.largeButtonStyle
 import com.sample.noti.core.designsystem.theme.MainBg
 import com.sample.noti.core.designsystem.theme.NotiTheme
 import com.sample.noti.core.ui.NotiScaffold
@@ -74,6 +77,15 @@ private fun HomeContent(
             Text(
                 "홈 화면",
                 color = NotiTheme.colors.contentPrimary
+            )
+            NotiTextButton(
+                text = "텍스트 인식 테스트",
+                onClick = { state.eventSink(HomeUiEvent.OnTextScanButtonClick) },
+                modifier = modifier,
+                colorStyle = NotiButtonColorStyle.TEXT,
+                sizeStyle = largeButtonStyle,
+                enabled = true,
+                multipleEventsCutterEnabled = true
             )
         }
         // else

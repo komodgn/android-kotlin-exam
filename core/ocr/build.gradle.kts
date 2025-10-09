@@ -9,12 +9,12 @@ plugins {
 android {
     namespace = "com.sample.noti.core.ocr"
 
-    defaultConfig {
-        buildConfigField("String", "CLOUD_VISION_API_KEY", getApiKey("CLOUD_VISION_API_KEY"))
-    }
-
     buildFeatures {
         buildConfig = true
+    }
+
+    defaultConfig {
+        buildConfigField("String", "CLOUD_VISION_API_KEY", getApiKey("CLOUD_VISION_API_KEY"))
     }
 }
 

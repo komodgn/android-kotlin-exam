@@ -4,12 +4,12 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class OcrResponse(
-    val response: List<AnnotateImageResponse>
+    val responses: List<AnnotateImageResponse>
 )
 
 @Serializable
 data class AnnotateImageResponse(
-    val fullTextAnnotation: List<FullTextAnnotation>? = null
+    val fullTextAnnotation: FullTextAnnotation? = null
 )
 
 @Serializable

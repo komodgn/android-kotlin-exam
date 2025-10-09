@@ -1,7 +1,9 @@
 package com.sample.noti.feature.home
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import com.sample.noti.feature.screens.HomeScreen
+import com.sample.noti.feature.screens.OcrScreen
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
@@ -27,6 +29,11 @@ class HomePresenter @AssistedInject constructor(
                         saveState = true,
                         restoreState = true
                     )
+                }
+
+                is HomeUiEvent.OnTextScanButtonClick -> {
+                    Log.d("Circuit", "OCR 버튼 클릭 이벤트 수신")
+                    navigator.goTo(OcrScreen)
                 }
             }
         }

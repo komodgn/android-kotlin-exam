@@ -10,4 +10,5 @@ data class HomeUiState(
 
 sealed interface HomeUiEvent : CircuitUiEvent {
     data class OnTabSelected(val tab: MainTab) : HomeUiEvent
+    data object OnTextScanButtonClick: HomeUiEvent
 }

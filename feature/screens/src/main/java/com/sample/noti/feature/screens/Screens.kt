@@ -19,6 +19,9 @@ data object OnboardingScreen : NotiScreen(name = ScreenNames.ONBOARDING)
 data object HomeScreen : NotiScreen(name = ScreenNames.HOME)
 
 @Parcelize
+data object OcrScreen : NotiScreen(name = ScreenNames.OCR)
+
+@Parcelize
 data object LoginScreen : NotiScreen(name = ScreenNames.LOGIN)
 
 @Parcelize

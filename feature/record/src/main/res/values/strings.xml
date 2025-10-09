@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_dialog_title">카메라 권한이 필요해요.</string>
+    <string name="permission_dialog_description">칸쵸 수집을 위해 카메라 권한을 허용해주세요.</string>
+    <string name="permission_dialog_move_to_settings">설정하러 가기</string>
+</resources>
