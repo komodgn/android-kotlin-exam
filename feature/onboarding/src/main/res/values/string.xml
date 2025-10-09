@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="skip">건너뛰기</string>
+    <string name="next">다음</string>
+    <string name="previous">이전</string>
+    <string name="start">시작하기</string>
+    <string name="onboarding_first_page_title">칸쵸를 모아 봐요.</string>
+    <string name="onboarding_first_page_description">이 세상 모든 칸쵸가 당신을 기다리고 있어요.</string>
+    <string name="onboarding_second_page_title">일일이 찾는 고통은 이제 그만!</string>
+    <string name="onboarding_second_page_description">카메라로 찍으면 자동으로 인식하고 도감에 등록해요.</string>
+    <string name="onboarding_third_page_title">나만의 ✨갓쵸✨ 컬렉션을 자랑하세요.</string>
+    <string name="onboarding_third_page_description">친구에게 칸쵸 도감을 공</string>
+</resources>
