@@ -33,7 +33,7 @@ internal fun OnboardingPage(
         Text(
             color = Orange500,
             text = stringResource(titleRes),
-            style = NotiTheme.typography.title1Bold
+            style = NotiTheme.typography.titleBmjua
         )
         Spacer(
             modifier = Modifier.height(

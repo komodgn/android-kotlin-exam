@@ -17,6 +17,10 @@ val pretendardFamily = FontFamily(
     Font(R.font.pretendard_semi_bold, FontWeight.SemiBold, FontStyle.Normal),
 )
 
+val bmjuaFamily = FontFamily(
+    Font(R.font.bmjua, FontWeight.Normal)
+)
+
 private val defaultLineHeightStyle = LineHeightStyle(
     alignment = LineHeightStyle.Alignment.Center,
     trim = LineHeightStyle.Trim.None,
@@ -42,6 +46,14 @@ private fun style(
 
 @Immutable
 data class NotiTypography(
+    val titleBmjua: TextStyle = baseTextStyle.copy(
+        fontFamily = bmjuaFamily,
+        fontSize = 32.sp,
+        lineHeight = 42.sp,
+        letterSpacing = 0.sp,
+        fontWeight = FontWeight.Normal
+    ),
+
     val title1Bold: TextStyle = style(28, 38, -0.66f, FontWeight.Bold),
     val title1SemiBold: TextStyle = style(28, 38, -0.66f, FontWeight.SemiBold),
     val title1Medium: TextStyle = style(28, 38, -0.66f, FontWeight.Medium),
