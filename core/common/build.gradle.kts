@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.multi.module.android.library.compose)
+    alias(libs.plugins.multi.module.android.hilt)
 }
 
 android {
@@ -18,6 +19,8 @@ dependencies {
     implementation(projects.core.model)
 
     implementation(libs.kotlinx.collections.immutable)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 
     implementation(libs.logger)
     testImplementation(projects.core.testing)

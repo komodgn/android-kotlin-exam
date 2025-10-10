@@ -1,5 +1,6 @@
 plugins {
-    alias(libs.plugins.multi.module.android.library.compose)
+    // TODO: 컴포즈 관련 컨벤션 정리
+    alias(libs.plugins.multi.module.android.presentation.ui)
     alias(libs.plugins.kotlin.parcelize)
 }
 

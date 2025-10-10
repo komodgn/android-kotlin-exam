@@ -15,6 +15,7 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.model)
     implementation(projects.core.ui)
+    implementation(projects.core.ocr)
     implementation(projects.core.network)
     implementation(projects.core.data.api)
     implementation(projects.core.data.impl)
@@ -27,6 +28,8 @@ dependencies {
     implementation(projects.feature.onboarding)
     implementation(projects.feature.login)
     implementation(projects.feature.home)
+    implementation(projects.feature.webview)
+    implementation(projects.feature.record)
 
 //    implementation(libs.androidx.startup)
 //    implementation(libs.coil.compose)

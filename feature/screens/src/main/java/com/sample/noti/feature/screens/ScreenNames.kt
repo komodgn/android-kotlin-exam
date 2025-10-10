@@ -5,4 +5,6 @@ object ScreenNames {
     const val ONBOARDING = "onboarding"
     const val LOGIN = "login"
     const val HOME = "home"
+    const val OCR = "ocr"
+    const val WEBVIEW = "webview"
 }

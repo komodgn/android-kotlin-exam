@@ -2,52 +2,106 @@ package com.sample.noti.feature.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.sample.noti.core.designsystem.DevicePreview
+import com.sample.noti.core.designsystem.component.button.NotiButtonColorStyle
+import com.sample.noti.core.designsystem.component.button.NotiTextButton
+import com.sample.noti.core.designsystem.component.button.largeButtonStyle
+import com.sample.noti.core.designsystem.theme.MainBg
 import com.sample.noti.core.designsystem.theme.NotiTheme
-import com.sample.noti.core.designsystem.theme.Orange50
+import com.sample.noti.core.ui.NotiScaffold
+import com.sample.noti.feature.home.component.HomeHeader
 import com.sample.noti.feature.screens.HomeScreen
+import com.sample.noti.feature.screens.component.MainBottomBar
+import com.sample.noti.feature.screens.component.MainTab
 import com.slack.circuit.codegen.annotations.CircuitInject
-import com.slack.circuit.runtime.CircuitUiState
-import com.slack.circuit.runtime.presenter.Presenter
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
 import dagger.hilt.android.components.ActivityRetainedComponent
-
-// TODO: state, presenter 분리
-class HomePresenter @AssistedInject constructor() : Presenter<HomeUiState> {
-    @Composable
-    override fun present(): HomeUiState {
-        return HomeUiState
-    }
-
-    @AssistedFactory
-    @CircuitInject(HomeScreen::class, ActivityRetainedComponent::class)
-    interface Factory {
-        fun create(
-            // navigator: Navigator,
-            // screen: HomeScreen
-        ): HomePresenter
-    }
-}
-
-object HomeUiState: CircuitUiState
+import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 @CircuitInject(HomeScreen::class, ActivityRetainedComponent::class)
-fun HomeUi(state: HomeUiState, modifier: Modifier = Modifier) {
+fun HomeUi(
+    state: HomeUiState,
+    modifier: Modifier = Modifier
+) {
+    NotiScaffold(
+        modifier = modifier.fillMaxSize(),
+        bottomBar = {
+            MainBottomBar(
+                tabs = MainTab.entries.toImmutableList(),
+                currentTab = MainTab.HOME,
+                onTabSelected = { tab ->
+                    state.eventSink(HomeUiEvent.OnTabSelected(tab))
+                }
+            )
+        }
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MainBg)
+                .padding(innerPadding)
+        ) {
+            HomeHeader()
+            HomeContent(
+                state = state
+            )
+        }
+    }
+}
+
+@Composable
+private fun HomeContent(
+    state: HomeUiState,
+    modifier: Modifier = Modifier
+) {
     Box(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxSize()
-            .background(Orange50),
-        contentAlignment = Alignment.Center
+            .background(NotiTheme.colors.baseSecondary)
     ) {
-        Text(
-            "임시로 생성한 홈 화면",
-            color = NotiTheme.colors.contentBrand
+        // TODO: 상태 별 화면 출력
+        // if GESTMODE
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
+        ) {
+            Text(
+                "홈 화면",
+                color = NotiTheme.colors.contentPrimary
+            )
+            NotiTextButton(
+                text = "텍스트 인식 테스트",
+                onClick = { state.eventSink(HomeUiEvent.OnTextScanButtonClick) },
+                modifier = modifier,
+                colorStyle = NotiButtonColorStyle.TEXT,
+                sizeStyle = largeButtonStyle,
+                enabled = true,
+                multipleEventsCutterEnabled = true
+            )
+        }
+        // else
+            // when UI State - IDLE, LOADING, SUCCESS, ERROR
+    }
+}
+
+@DevicePreview
+@Composable
+fun HomeUiPreview() {
+    NotiTheme {
+        HomeUi(
+            state = HomeUiState(
+                eventSink = {},
+            ),
+            modifier = Modifier
         )
     }
 }
