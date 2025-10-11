@@ -12,7 +12,7 @@ dependencies {
     implementation(libs.logger)
 
 //    libs.androidx.splash,
-//
-//    libs.coil.compose,
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 //    libs.bundles.landscapist,
 }
