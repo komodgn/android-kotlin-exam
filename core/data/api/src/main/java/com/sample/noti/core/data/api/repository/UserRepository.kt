@@ -6,8 +6,8 @@ import com.sample.noti.core.model.UserProfileModel
 import kotlinx.coroutines.flow.Flow
 
 interface UserRepository {
+    val onboardingState: Flow<OnboardingState>
+    suspend fun setOnboardingCompleted(isCompleted: Boolean)
     suspend fun getUserProfile(): Result<UserProfileModel>
     suspend fun agreeTrems(termsAgreed: Boolean): Result<TermsAgreementModel>
-    suspend fun setOnboardingCompleted(isCompleted: Boolean): Result<Unit>
-    val onboardingState: Flow<OnboardingState>
 }
