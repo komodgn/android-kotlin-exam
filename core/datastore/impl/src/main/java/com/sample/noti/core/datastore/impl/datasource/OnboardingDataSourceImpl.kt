@@ -29,7 +29,7 @@ class OnboardingDataSourceImpl @Inject constructor(
         }
     }
 
-    companion object {
-        private val IS_ONBOARDING_COMPLETED = booleanPreferencesKey("IS_ONBOARDING_COMPLETED")
+    private companion object {
+        val IS_ONBOARDING_COMPLETED = booleanPreferencesKey("IS_ONBOARDING_COMPLETED")
     }
 }
