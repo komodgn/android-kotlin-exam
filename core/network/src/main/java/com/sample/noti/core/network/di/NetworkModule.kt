@@ -1,6 +1,6 @@
 package com.sample.noti.core.network.di
 
-//import com.sample.noti.core.network.TokenInterceptor
+import com.sample.noti.core.network.TokenInterceptor
 //import com.sample.noti.core.network.TokenAuthenticator
 import com.sample.noti.core.network.BuildConfig
 import com.sample.noti.core.network.service.CatFactsService
@@ -48,13 +48,15 @@ internal object NetworkModule {
     @Singleton
     @Provides
     internal fun provideOkHttpClient(
-        // TODO: Add Logging, TokenInterceptor
+        // TODO: Add Logging
+        tokenInterceptor: TokenInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .connectTimeout(MaxTimeoutMillis, TimeUnit.MILLISECONDS)
             .readTimeout(MaxTimeoutMillis, TimeUnit.MILLISECONDS)
             .writeTimeout(MaxTimeoutMillis, TimeUnit.MILLISECONDS)
-            // TODO: Add Logging, TokenInterceptor
+            // TODO: Add Logging
+            .addInterceptor(tokenInterceptor)
             .build()
     }
 
