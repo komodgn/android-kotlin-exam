@@ -3,7 +3,7 @@ package com.sample.noti.core.network.di
 import com.sample.noti.core.network.TokenInterceptor
 import com.sample.noti.core.network.BuildConfig
 import com.sample.noti.core.network.TokenAuthenticator
-import com.sample.noti.core.network.service.CatFactsService
+import com.sample.noti.core.network.service.NotiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -77,9 +77,9 @@ internal object NetworkModule {
 
     @Singleton
     @Provides
-    internal fun provideCatFactsService(
+    internal fun provideNotiService(
         retrofit: Retrofit,
-    ): CatFactsService {
+    ): NotiService {
         return retrofit.create()
     }
 }
