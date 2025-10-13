@@ -1,8 +1,8 @@
 package com.sample.noti.core.network.di
 
 import com.sample.noti.core.network.TokenInterceptor
-//import com.sample.noti.core.network.TokenAuthenticator
 import com.sample.noti.core.network.BuildConfig
+import com.sample.noti.core.network.TokenAuthenticator
 import com.sample.noti.core.network.service.CatFactsService
 import dagger.Module
 import dagger.Provides
@@ -49,14 +49,17 @@ internal object NetworkModule {
     @Provides
     internal fun provideOkHttpClient(
         // TODO: Add Logging
-        tokenInterceptor: TokenInterceptor
+        tokenInterceptor: TokenInterceptor,
+        tokenAuthenticator: TokenAuthenticator
     ): OkHttpClient {
+
         return OkHttpClient.Builder()
             .connectTimeout(MaxTimeoutMillis, TimeUnit.MILLISECONDS)
             .readTimeout(MaxTimeoutMillis, TimeUnit.MILLISECONDS)
             .writeTimeout(MaxTimeoutMillis, TimeUnit.MILLISECONDS)
             // TODO: Add Logging
             .addInterceptor(tokenInterceptor)
+            .authenticator(tokenAuthenticator)
             .build()
     }
 

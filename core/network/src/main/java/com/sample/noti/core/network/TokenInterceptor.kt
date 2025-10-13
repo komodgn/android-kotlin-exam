@@ -12,6 +12,7 @@ internal class TokenInterceptor @Inject constructor(
 
     private val publicEndpoints = setOf(
         "api/v1/auth/login",
+        "api/v1/auth/refresh",
     )
 
     override fun intercept(chain: Interceptor.Chain): Response {
