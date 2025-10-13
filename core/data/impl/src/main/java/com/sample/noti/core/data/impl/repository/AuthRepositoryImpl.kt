@@ -37,20 +37,27 @@ internal class AuthRepositoryImpl @Inject constructor(
                 accessToken = accessToken
             )
         )
-        tokenDataSource.apply {
-            setAccessToken(loginResponse.accessToken)
-            setRefreshToken(loginResponse.refreshToken)
-        }
-        Unit
+        saveTokens(loginResponse.accessToken, loginResponse.refreshToken)
     }
 
     override suspend fun logout() = runSuspendCatching {
         providerService.logout()
-        tokenDataSource.clearTokens()
+        clearTokens()
     }
 
     override suspend fun withdraw() = runSuspendCatching {
         providerService.withdraw()
+        clearTokens()
+    }
+
+    private suspend fun saveTokens(accessToken: String, refreshToken: String) {
+        tokenDataSource.apply {
+            setAccessToken(accessToken)
+            setRefreshToken(refreshToken)
+        }
+    }
+
+    private suspend fun clearTokens() {
         tokenDataSource.clearTokens()
     }
 }
