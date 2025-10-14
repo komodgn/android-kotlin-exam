@@ -17,7 +17,7 @@ class RemoteConfigRepositoryImpl @Inject constructor(
     override suspend fun getLatestVersion(): Result<String> = suspendCancellableCoroutine { continuation ->
         remoteConfig.fetchAndActivate().addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                val latestVersion = remoteConfig[KEY_LATEST_VERSION].asString()
+                val latestVersion = remoteConfig.getString(KEY_LATEST_VERSION)
                 Logger.d("latestVersion: $latestVersion")
                 continuation.resume(Result.success(latestVersion))
             } else {
@@ -30,7 +30,7 @@ class RemoteConfigRepositoryImpl @Inject constructor(
     override suspend fun shouldUpdate(): Result<Boolean> = suspendCancellableCoroutine { continuation ->
         remoteConfig.fetchAndActivate().addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                val minVersion = remoteConfig.getString("KEY_MIN_VERSION")
+                val minVersion = remoteConfig.getString(KEY_MIN_VERSION)
                 val currentVersion = BuildConfig.APP_VERSION
                 
                 Logger.d("currentVersion: $currentVersion, minVersion: $minVersion")
