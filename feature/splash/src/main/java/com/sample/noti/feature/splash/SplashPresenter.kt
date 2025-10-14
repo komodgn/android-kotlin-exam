@@ -23,6 +23,7 @@ import dagger.assisted.AssistedInject
 import dagger.hilt.android.components.ActivityRetainedComponent
 import kotlinx.coroutines.launch
 import com.orhanobut.logger.Logger
+import com.sample.noti.core.common.analytics.AnalyticsHelper
 import com.sample.noti.feature.screens.HomeScreen
 import com.sample.noti.feature.screens.LoginScreen
 import com.sample.noti.feature.screens.OnboardingScreen
@@ -34,7 +35,7 @@ class SplashPresenter @AssistedInject constructor(
     private val userRepository: UserRepository,
     private val authRepository: AuthRepository,
     private val remoteConfigRepository: RemoteConfigRepository,
-    // TODO: Add AnalyticsHelper
+    private val analyticsHelper: AnalyticsHelper
 ) : Presenter<SplashUiState> {
 
     @Composable
@@ -126,7 +127,7 @@ class SplashPresenter @AssistedInject constructor(
         }
 
         ImpressionEffect {
-            // TODO: [Analytics Helper Logging]
+            analyticsHelper.logScreenView(SplashScreen.name)
         }
 
         return SplashUiState(
