@@ -62,9 +62,21 @@ val Blue700 = Color(0xFF007BFF)
 val Blue800 = Color(0xFF1269EC)
 val Blue900 = Color(0xFF1F47CD)
 
+val Violet50 = Color(0xFFF3E5F5)
+val Violet100 = Color(0xFFE1BEE7)
+val Violet200 = Color(0xFFCE93D8)
+val Violet300 = Color(0xFFBA68C8)
+val Violet400 = Color(0xFFAB47BC)
+val Violet500 = Color(0xFF9C27B0)
+val Violet600 = Color(0xFF8E24AA)
+val Violet700 = Color(0xFF7B1FA2)
+val Violet800 = Color(0xFF6A1B9A)
+val Violet900 = Color(0xFF4A148C)
+
 val Kakao = Color(0xFFFBD300)
 val Blank = Color(0xFFD6D6D6)
 val MainBg = Color(0xFFF0F9E8)
+val HomeBg = Violet100
 
 @Immutable
 data class NotiColorScheme(
@@ -73,31 +85,31 @@ data class NotiColorScheme(
     val baseSecondary: Color = Neutral50,
 
     // Background
-    val bgPrimary: Color = Orange500,
-    val bgPrimaryPressed: Color = Orange600,
+    val bgPrimary: Color = Violet500,
+    val bgPrimaryPressed: Color = Violet600,
     val bgSecondary: Color = Neutral100,
     val bgSecondaryPressed: Color = Neutral200,
-    val bgTertiary: Color = Orange100,
-    val bgTertiaryPressed: Color = Orange200,
+    val bgTertiary: Color = Violet100,
+    val bgTertiaryPressed: Color = Violet200,
     val bgDisabled: Color = Neutral200,
 
     // Content
     val contentPrimary: Color = Neutral800,
     val contentSecondary: Color = Neutral500,
     val contentTertiary: Color = Neutral400,
-    val contentBrand: Color = Orange500,
+    val contentBrand: Color = Violet500,
     val contentDisabled: Color = Neutral400,
     val contentInverse: Color = White,
 
     val contentError: Color = Red500,
     val contentInfo: Color = Blue500,
     val contentSuccess: Color = Green400,
-    val contentWarning: Color = Orange300,
+    val contentWarning: Color = Violet300,
 
     // Border
     val borderPrimary: Color = Neutral200,
     val borderSecondary: Color = Neutral100,
-    val borderBrand: Color = Orange500,
+    val borderBrand: Color = Violet500,
     val borderError: Color = Red500,
     val borderDisabled: Color = Neutral200,
 
