@@ -20,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.sample.noti.core.designsystem.DevicePreview
 import com.sample.noti.core.designsystem.theme.NotiTheme
+import com.sample.noti.core.ui.component.NotiDialog
 import com.sample.noti.feature.screens.SplashScreen
 import com.slack.circuit.codegen.annotations.CircuitInject
 import dagger.hilt.android.components.ActivityRetainedComponent
@@ -85,7 +86,14 @@ fun SplashUi(
         }
 
         if (state.isForceUpdateDialogVisible) {
-            // TODO: Show Update Dialog
+            NotiDialog(
+                title = stringResource(R.string.splash_update_title),
+                description = stringResource(R.string.splash_app_description),
+                confirmButtonText = stringResource(R.string.splash_update_button_text),
+                onConfirmRequest = {
+                    state.eventSink(SplashUiEvent.OnUpdateButtonClick)
+                },
+            )
         }
     }
 }

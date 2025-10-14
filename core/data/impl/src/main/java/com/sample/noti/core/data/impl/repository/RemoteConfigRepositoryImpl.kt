@@ -1,5 +1,6 @@
 package com.sample.noti.core.data.impl.repository
 
+import android.util.Log
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.get
 import com.orhanobut.logger.Logger
@@ -10,15 +11,9 @@ import kotlinx.coroutines.suspendCancellableCoroutine
 import javax.inject.Inject
 import kotlin.coroutines.resume
 
-class DefaultRemoteConfigRepository @Inject constructor(
+class RemoteConfigRepositoryImpl @Inject constructor(
     private val  remoteConfig: FirebaseRemoteConfig
 ) : RemoteConfigRepository {
-
-    companion object {
-        private const val KEY_LATEST_VERSION = "LatestVersion"
-        private const val KEY_MIN_VERSION = "MinVersion"
-    }
-
     override suspend fun getLatestVersion(): Result<String> = suspendCancellableCoroutine { continuation ->
         remoteConfig.fetchAndActivate().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -35,8 +30,9 @@ class DefaultRemoteConfigRepository @Inject constructor(
     override suspend fun shouldUpdate(): Result<Boolean> = suspendCancellableCoroutine { continuation ->
         remoteConfig.fetchAndActivate().addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                val minVersion = remoteConfig[KEY_MIN_VERSION].asString()
+                val minVersion = remoteConfig.getString("KEY_MIN_VERSION")
                 val currentVersion = BuildConfig.APP_VERSION
+                
                 Logger.d("currentVersion: $currentVersion, minVersion: $minVersion")
                 continuation.resume(Result.success(isUpdateRequired(currentVersion, minVersion)))
             } else {
@@ -44,5 +40,10 @@ class DefaultRemoteConfigRepository @Inject constructor(
                 continuation.resume(Result.failure(task.exception ?: Exception("Unknown error")))
             }
         }
+    }
+
+    private companion object {
+        const val KEY_LATEST_VERSION = "LatestVersion"
+        const val KEY_MIN_VERSION = "MinVersion"
     }
 }
